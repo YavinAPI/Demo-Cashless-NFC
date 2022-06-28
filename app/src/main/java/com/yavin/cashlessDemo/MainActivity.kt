@@ -7,7 +7,6 @@ import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -16,6 +15,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.yavin.cashlessDemo.model.CashlessPaymentInput
+import com.yavin.cashlessDemo.model.demo.Item
+import com.yavin.cashlessDemo.model.demo.dummyItems
 import com.yavin.cashlessDemo.ui.theme.DemoCashlessTheme
 import java.text.NumberFormat
 import java.util.*
@@ -144,14 +145,6 @@ fun ItemRow(data: Item) {
     }
 }
 
-data class Item(val name: String, val totalPriceInCents: Int, val quantity: Int)
-
-val dummyItems = listOf(
-    Item("Bière", 1500, quantity = 3),
-    Item("Coca cola", 500, quantity = 1),
-    Item("Planche à partager", 2000, quantity = 1),
-)
-
 @Preview
 @Composable
 fun PreviewBillScreen() {
@@ -163,19 +156,5 @@ fun PreviewBillScreen() {
         ) {
             BillScreen()
         }
-    }
-}
-
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    DemoCashlessTheme {
-        Greeting("Android")
     }
 }
