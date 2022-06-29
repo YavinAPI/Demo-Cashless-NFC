@@ -4,4 +4,4 @@ import com.yavin.cashlessDemo.model.TagInfo
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class YavinNFCReaderResponse(val status: Boolean, val tagInfo: TagInfo?)
+data class YavinNFCReaderResponse(val status: Boolean, val tagInfo: TagInfo? = null)
