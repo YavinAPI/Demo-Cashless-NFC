@@ -145,7 +145,7 @@ fun ItemRow(data: Item) {
     }
 }
 
-@Preview
+@Preview(showSystemUi = true)
 @Composable
 fun PreviewBillScreen() {
     DemoCashlessTheme {
